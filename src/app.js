@@ -28,7 +28,7 @@ import {check} from "./modules/checker";
         if ($this.find('.test-wrap')) {
             $this.find('.test-wrap').remove();
         }
-        if (check.action($this) !== 'isSearch') {
+        if (check.action($this) !== 'isSearch' || $this.find('input') !== undefined) {
             $this.append(defaults.template);
         }
 
