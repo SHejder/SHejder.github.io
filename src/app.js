@@ -12,6 +12,7 @@ import {check} from "./modules/checker";
                     <select class="fixture-type">
                         <option value="">Как заполнить поля?</option>   
                         <option value="required">Только обязательные</option>  
+                        <option value="all">Все доступные</option>  
                     </select>
                     <button type="button">Заполнить</button> 
                 </div>`
@@ -54,11 +55,15 @@ import {check} from "./modules/checker";
 
 
         $widget.find('button').on('click', function () {
+            let $button = $(this);
+            $button.text('Перезаполнить');
             if (val === 'required') {
-                let $button = $(this);
 
-                $button.text('Перезаполнить');
-                fill.form($this);
+                fill.required($this);
+
+            } else if (val === 'all') {
+
+                fill.all($this);
 
             }
         });

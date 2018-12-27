@@ -19,11 +19,11 @@ export let fill = {
 
     },
 
-    form: function ($this) {
+    required: function ($this) {
         $this.find('textarea').each(function () {
             let $textarea = $(this);
             if ($textarea.attr('required') !== undefined) {
-                fill.field($textarea,'textarea');
+                fill.field($textarea, 'textarea');
             }
         });
 
@@ -42,6 +42,31 @@ export let fill = {
                 fill.field($input, type);
             }
         })
+
+    },
+
+    all: function ($this) {
+
+        $this.find('textarea').each(function () {
+            let $textarea = $(this);
+            fill.field($textarea, 'textarea');
+        });
+        $this.find('input').each(function () {
+
+            let $input = $(this);
+            let type = Type($input);
+
+
+            if (type !== 'submit') {
+                $input.val('');
+            }
+
+
+            if (type !== 'hidden') {
+                fill.field($input, type);
+            }
+        })
+
 
     }
 };
