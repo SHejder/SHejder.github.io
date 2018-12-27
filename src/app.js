@@ -17,6 +17,7 @@ import {check} from "./modules/checker";
                 </div>`
         }
     };
+    //
 
     $('form').each(function () {
 
@@ -28,9 +29,12 @@ import {check} from "./modules/checker";
         if ($this.find('.test-wrap')) {
             $this.find('.test-wrap').remove();
         }
-        if (check.action($this) !== 'isSearch') {
+        if (check.action($this) !== 'isSearch' && $this.find('input').length >= 1) {
             $this.append(defaults.template);
         }
+
+        //
+
 
 
         let $widget = $this.find('.test-wrap');
