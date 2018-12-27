@@ -6,13 +6,15 @@ export let fill = {
         if (type === 'email') {
             $field.val(getData.email);
         } else if (type === 'text') {
-            $field.val('test');
+            $field.val(getData.text);
         } else if (type === 'phone') {
             $field.val(getData.phone);
         } else if (type === 'name') {
             $field.val(getData.name);
         } else if (type === 'textarea') {
-            $field.val('This is the test! ');
+            $field.val(getData.textarea);
+        } else if (type === 'number') {
+            $field.val(getData.number);
         } else {
             return false
         }

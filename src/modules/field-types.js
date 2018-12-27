@@ -19,6 +19,8 @@ export function Type ($input) {
         return 'submit'
     } else if (name === 'isName' && type === 'isText') {
         return 'name'
+    } else if (type === 'isNumber') {
+        return 'number'
     } else {
         return ''
     }

@@ -21,5 +21,18 @@ export let getData = {
         let arr = [89009009090, '+78954566235', 89201002020];
 
         return arr[getData.randomInt(arr.length - 1)]
+    },
+    textarea: function () {
+        let arr = ['This is the test!', 'Hi! It\'s a test!'];
+
+        return arr[getData.randomInt(arr.length - 1)]
+    },
+    text: function () {
+        let arr = ['This is the test!', 'Hi! It\'s a test!'];
+
+        return arr[getData.randomInt(arr.length - 1)]
+    },
+    number:function () {
+        return getData.randomInt(100)
     }
 };
