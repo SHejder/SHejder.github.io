@@ -35,7 +35,9 @@ import {check} from "./modules/checker";
         }
 
         //
-
+        $this.css({
+            position:'relative'
+        });
 
 
         let $widget = $this.find('.test-wrap');
