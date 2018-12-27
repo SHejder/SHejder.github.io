@@ -26,13 +26,12 @@ import {check} from "./modules/checker";
 
         let position = '110%';
         let $this = $(this);
-        let $wrapper = '';
         if ($('body').find('.test-form-wrapper')) {
             $this.unwrap();
         }
 
         $this.wrap('<div class="test-form-wrapper"></div>');
-
+        let $wrapper = $('.test-form-wrapper');
         $wrapper.css('position', 'relative');
         // $this.find('input')
         if ($wrapper.find('.test-wrap')) {
