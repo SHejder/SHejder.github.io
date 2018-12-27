@@ -21,7 +21,9 @@ import {check} from "./modules/checker";
     //
 
 
-    $('body').css('position', 'relative');
+    let $body = $('body').css('position', 'relative');
+    let $widget = $body.find('.test-wrap');
+
     $('form').each(function () {
 
         let $this = $(this);
@@ -33,14 +35,13 @@ import {check} from "./modules/checker";
         //     $this.find('.test-wrap').remove();
         // }
         if (check.action($this) !== 'isSearch' && $this.find('input').length > 1) {
-            $('body').append(defaults.template);
+            $body.append(defaults.template);
         }
 
         //
 
 
 
-        let $widget = $this.find('.test-wrap');
 
 
         let val;
