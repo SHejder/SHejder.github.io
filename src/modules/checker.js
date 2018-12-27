@@ -18,11 +18,13 @@ export let check = {
     },
 
     action: function ($form) {
-        let action = $form.attr('action');
-        if (~action.indexOf('search')) {
-            return 'isSearch'
-        } else {
-            return false
+        if ($form.attr('action') !== undefined){
+            let action = $form.attr('action');
+            if (~action.indexOf('search')) {
+                return 'isSearch'
+            } else {
+                return false
+            }
         }
     },
 
