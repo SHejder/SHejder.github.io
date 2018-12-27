@@ -35,7 +35,7 @@ export let fill = {
             let type = Type($input);
 
 
-            if (type !== 'submit') {
+            if (type !== 'submit' && $input.is(':visible')) {
                 $input.val('');
             }
 
@@ -59,7 +59,7 @@ export let fill = {
             let type = Type($input);
 
 
-            if (type !== 'submit') {
+            if (type !== 'submit' && $input.is(':visible')) {
                 $input.val('');
             }
 
