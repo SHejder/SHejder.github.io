@@ -1,39 +1,41 @@
 import {getData} from "./dataProviders";
-import {check} from "./checker";
+import {Type} from "./field-types";
 
 export let fill = {
-    field: function ($input, $type, $name) {
-        if ($type === 'isEmail' || $name === 'isEmail') {
-            $input.val(getData.email());
-        } else if ($type === 'isText' && $name !== 'isPhone' && $type !== 'isEmail' && $name !== 'isName') {
+    field: function ($input, type) {
+        if (type === 'email') {
+            $input.val(getData.email);
+        } else if (type === 'text') {
             $input.val('test');
-        } else if ($name === 'isPhone') {
-            console.log('yep')
-            $input.val('89101956231');
-        } else if ($name === 'isName') {
-            $input.val(getData.name());
+        } else if (type === 'phone') {
+            $input.val(getData.phone);
+        } else if (type === 'name') {
+            $input.val(getData.name);
         } else {
             return false
         }
 
     },
 
-    form: function ($select, $this) {
+    form: function ($this) {
 
 
-        if ($select.val() == 'required') {
-            $this.find('input').each(function () {
+        $this.find('input').each(function () {
 
-                let $input = $(this);
+            let $input = $(this);
+            let type = Type($input);
 
+
+
+            if (type !== 'submit') {
                 $input.val('');
-                let $type = check.type($input);
-                let $name = check.name($input);
-                if ($input.attr('required') !== undefined && $type !== 'isHidden') {
-                    fill.field($input, $type, $name);
-                }
-            })
-        }
+            }
+
+
+            if ($input.attr('required') !== undefined && type !== 'hidden') {
+                fill.field($input, type);
+            }
+        })
 
     }
 };

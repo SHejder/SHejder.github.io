@@ -1,12 +1,12 @@
 export let check = {
     name: function ($input) {
-        let $name = $input.attr('name');
-        if ($name !== undefined) {
-            if (~$name.indexOf('phone')) {
+        let name = $input.attr('name');
+        if (name !== undefined) {
+            if (~name.indexOf('phone')) {
                 return 'isPhone'
-            } else if (~$name.indexOf('name')) {
+            } else if (~name.indexOf('name')) {
                 return 'isName'
-            } else if (~$name.indexOf('email')) {
+            } else if (~name.indexOf('email')) {
                 return 'isEmail'
             } else {
                 return false
@@ -27,19 +27,22 @@ export let check = {
     },
 
     type: function ($input) {
-        let $type = $input.attr('type');
-        if ($type === 'hidden') {
+        let type = $input.attr('type');
+        if (type === 'hidden') {
             return 'isHidden'
-        } else if ($type === 'email') {
+        } else if (type === 'email') {
             return 'isEmail'
-        } else if ($type === 'text') {
+        } else if (type === 'text') {
             return 'isText'
-        } else if ($type === 'number') {
+        } else if (type === 'number') {
             return 'isNumber'
-        } else if ($type === 'phone') {
+        } else if (type === 'phone') {
             return 'isPhone'
+        } else if (type === 'submit') {
+            return 'isSubmit'
         } else {
             return false
         }
     }
+
 };
