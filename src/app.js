@@ -1,4 +1,5 @@
 import {fill} from './modules/filler'
+import {check} from "./modules/checker";
 
 (function ($) {
 
@@ -27,7 +28,9 @@ import {fill} from './modules/filler'
         if ($this.find('.test-wrap')) {
             $this.find('.test-wrap').remove();
         }
-        $this.append(defaults.template);
+        if (check.action($this) !== 'isSearch') {
+            $this.append(defaults.template);
+        }
 
 
         let $widget = $this.find('.test-wrap');
