@@ -26,26 +26,19 @@ import {check} from "./modules/checker";
 
         let position = '110%';
         let $this = $(this);
-        if ($('body').find('.test-form-wrapper')) {
-            $this.unwrap('.test-form-wrapper');
-        }
-
-        $this.wrap('<div class="test-form-wrapper"></div>');
-        let $wrapper = $('.test-form-wrapper');
-        $wrapper.css('position', 'relative');
         // $this.find('input')
-        if ($wrapper.find('.test-wrap')) {
-            $wrapper.find('.test-wrap').remove();
+        if ($this.find('.test-wrap')) {
+            $this.find('.test-wrap').remove();
         }
         if (check.action($this) !== 'isSearch' && $this.find('input').length > 1) {
-            $wrapper.append(defaults.template);
+            $this.append(defaults.template);
         }
 
         //
 
 
 
-        let $widget = $wrapper.find('.test-wrap');
+        let $widget = $this.find('.test-wrap');
 
         let val;
 
