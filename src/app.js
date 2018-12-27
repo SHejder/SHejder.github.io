@@ -20,10 +20,14 @@ import {check} from "./modules/checker";
     };
     //
 
+
+
     $('form').each(function () {
 
         let position = '110%';
         let $this = $(this);
+
+        console.log($this.offset());
 
         $this.css('position', 'relative');
         // $this.find('input')
