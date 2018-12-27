@@ -42,7 +42,7 @@ import {check} from "./modules/checker";
 
 
 
-        let $widget = $this.find('.test-wrap');
+        let $widget = $wrapper.find('.test-wrap');
 
         let val;
 
