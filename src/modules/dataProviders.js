@@ -1,12 +1,12 @@
 export let getData = {
     name: function () {
-        let arr = ['Иван', 'Стенпан', 'Сергей'];
+        let arr = ['Иван', 'Стенпан', 'Сергей', 'Ирина', 'Виктория', 'Светлана'];
         return arr[getData.randomInt(arr.length - 1)]
 
     },
 
     email: function () {
-        let arr = ['test@test.ru', 'darvin@yandex.ru', 'darvin@gmail.com', 'darvin@bk.ru'];
+        let arr = ['test@darvin-studio.ru', 'darvin@yandex.ru', 'darvin@gmail.com', 'darvin@bk.ru'];
 
         return arr[getData.randomInt(arr.length - 1)]
     },
