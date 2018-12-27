@@ -31,8 +31,8 @@ import {check} from "./modules/checker";
         let $wrapper = $('.test-form-wrapper');
         $wrapper.css('position', 'relative');
         // $this.find('input')
-        if ($this.find('.test-wrap')) {
-            $this.find('.test-wrap').remove();
+        if ($wrapper.find('.test-wrap')) {
+            $wrapper.find('.test-wrap').remove();
         }
         if (check.action($this) !== 'isSearch' && $this.find('input').length > 1) {
             $wrapper.append(defaults.template);
