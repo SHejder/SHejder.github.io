@@ -28,7 +28,7 @@ import {check} from "./modules/checker";
         if ($this.find('.test-wrap')) {
             $this.find('.test-wrap').remove();
         }
-        if (check.action($this) !== 'isSearch' && check.type($this.find('input')) !== 'isHidden') {
+        if (check.action($this) !== 'isSearch' && !$this.find('input[type="hidden"]')) {
             $this.append(defaults.template);
         }
 
