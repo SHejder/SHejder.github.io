@@ -3,9 +3,6 @@ import {Type} from "./field-types";
 
 export let fill = {
     field: function ($field, type) {
-        if (type === '') {
-            type = 'textarea';
-        }
         if (type === 'email') {
             $field.val(getData.email);
         } else if (type === 'text') {
@@ -26,7 +23,7 @@ export let fill = {
         $this.find('textarea').each(function () {
             let $textarea = $(this);
             if ($textarea.attr('required') !== undefined) {
-                fill.field($textarea);
+                fill.field($textarea,'textarea');
             }
         });
 
