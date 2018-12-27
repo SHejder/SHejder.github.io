@@ -3,8 +3,8 @@ import {check} from "./modules/checker";
 
 (function ($) {
 
-    var screenWidth = $(window).width();
-    var defaults = {
+    let screenWidth = $(window).width();
+    let defaults = {
         // дефолтные опции
         template: function () {
             return `
