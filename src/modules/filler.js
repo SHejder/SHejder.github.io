@@ -2,15 +2,20 @@ import {getData} from "./dataProviders";
 import {Type} from "./field-types";
 
 export let fill = {
-    field: function ($input, type) {
+    field: function ($field, type) {
+        if (type === '') {
+            type = 'textarea';
+        }
         if (type === 'email') {
-            $input.val(getData.email);
+            $field.val(getData.email);
         } else if (type === 'text') {
-            $input.val('test');
+            $field.val('test');
         } else if (type === 'phone') {
-            $input.val(getData.phone);
+            $field.val(getData.phone);
         } else if (type === 'name') {
-            $input.val(getData.name);
+            $field.val(getData.name);
+        } else if (type === 'textarea') {
+            $field.val('This is the test! ');
         } else {
             return false
         }
@@ -18,13 +23,17 @@ export let fill = {
     },
 
     form: function ($this) {
-
+        $this.find('textarea').each(function () {
+            let $textarea = $(this);
+            if ($textarea.attr('required') !== undefined) {
+                fill.field($textarea, type);
+            }
+        });
 
         $this.find('input').each(function () {
 
             let $input = $(this);
             let type = Type($input);
-
 
 
             if (type !== 'submit') {
