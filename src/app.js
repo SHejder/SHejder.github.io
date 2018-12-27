@@ -21,21 +21,19 @@ import {check} from "./modules/checker";
     //
 
 
-
+    $('body').css('position', 'relative');
     $('form').each(function () {
 
-        let position = '110%';
         let $this = $(this);
-
+        let position = $this.offset();
         console.log($this.offset());
 
-        $this.css('position', 'relative');
         // $this.find('input')
-        if ($this.find('.test-wrap')) {
-            $this.find('.test-wrap').remove();
-        }
+        // if ($this.find('.test-wrap')) {
+        //     $this.find('.test-wrap').remove();
+        // }
         if (check.action($this) !== 'isSearch' && $this.find('input').length > 1) {
-            $this.append(defaults.template);
+            $('body').append(defaults.template);
         }
 
         //
@@ -43,6 +41,11 @@ import {check} from "./modules/checker";
 
 
         let $widget = $this.find('.test-wrap');
+
+        $widget.css({
+            top: position.top,
+            left: position.left
+        });
 
         let val;
 
