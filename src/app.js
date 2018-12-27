@@ -3,7 +3,7 @@ import {check} from "./modules/checker";
 
 (function ($) {
 
-    // var screenWidth = $(window).width();
+    var screenWidth = $(window).width();
     var defaults = {
         // дефолтные опции
         template: function () {
@@ -21,28 +21,28 @@ import {check} from "./modules/checker";
     //
 
 
-    let $body = $('body').css('position', 'relative');
-    let $widget = $body.find('.test-wrap');
 
     $('form').each(function () {
 
+        let position = '110%';
         let $this = $(this);
-        let position = $this.offset();
-        console.log($this.offset());
 
+        $this.wrap('<div class="test-form-wrapper"></div>');
+        let $wrapper = $('.test-form-wrapper');
+        $wrapper.css('position', 'relative');
         // $this.find('input')
-        // if ($this.find('.test-wrap')) {
-        //     $this.find('.test-wrap').remove();
-        // }
+        if ($this.find('.test-wrap')) {
+            $this.find('.test-wrap').remove();
+        }
         if (check.action($this) !== 'isSearch' && $this.find('input').length > 1) {
-            $body.append(defaults.template);
+            $wrapper.append(defaults.template);
         }
 
         //
 
 
 
-
+        let $widget = $this.find('.test-wrap');
 
         let val;
 
@@ -73,14 +73,14 @@ import {check} from "./modules/checker";
         });
 
 
-        // if ($this.width() === screenWidth) {
-        //     position = '85%';
-        // }
+        if ($this.width() === screenWidth) {
+            position = '85%';
+        }
 
         $widget.css({
             position: 'absolute',
-            top: position.top +'px',
-            left: position.left +'px',
+            top: 0,
+            left: position,
             backgroundColor: '#f5f5f5',
             opacity: 0.8,
             border: '2px solid black',
