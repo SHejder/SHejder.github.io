@@ -13,7 +13,7 @@ import {check} from "./modules/checker";
                         <option value="">Как заполнить поля?</option>   
                         <option value="required">Только обязательные</option>  
                     </select>
-                    <button type="button">Перезаполнить</button> 
+                    <button type="button">Заполнить</button> 
                 </div>`
         }
     };
@@ -46,12 +46,18 @@ import {check} from "./modules/checker";
             let $select = $(this);
             val = $select.val();
 
+            $widget.find('button').css({
+                display: 'block'
+            })
+
         });
 
 
         $widget.find('button').on('click', function () {
             if (val === 'required') {
+                let $button = $(this);
 
+                $button.text('Перезаполнить');
                 fill.form($this);
 
             }
@@ -85,7 +91,7 @@ import {check} from "./modules/checker";
             padding: '4px',
             width: 'auto',
             height: 'auto',
-            display: 'block'
+            display: 'none'
         });
 
 
