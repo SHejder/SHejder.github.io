@@ -28,9 +28,7 @@ export let check = {
 
     type: function ($input) {
         let type = $input.attr('type');
-        if (type === 'hidden') {
-            return 'isHidden'
-        } else if (type === 'email') {
+        if  (type === 'email') {
             return 'isEmail'
         } else if (type === 'text') {
             return 'isText'

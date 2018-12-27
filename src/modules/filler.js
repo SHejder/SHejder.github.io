@@ -40,7 +40,7 @@ export let fill = {
             }
 
 
-            if ($input.attr('required') !== undefined && type !== 'hidden') {
+            if ($input.attr('required') !== undefined && $input.is(':visible')) {
                 fill.field($input, type);
             }
         })
@@ -64,7 +64,7 @@ export let fill = {
             }
 
 
-            if (type !== 'hidden') {
+            if ($input.is(':visible')) {
                 fill.field($input, type);
             }
         })
