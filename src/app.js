@@ -79,8 +79,8 @@ import {check} from "./modules/checker";
 
         $widget.css({
             position: 'absolute',
-            top: position.top,
-            left: position.left,
+            top: position.top +'px',
+            left: position.left +'px',
             backgroundColor: '#f5f5f5',
             opacity: 0.8,
             border: '2px solid black',
