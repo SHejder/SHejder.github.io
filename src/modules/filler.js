@@ -26,7 +26,7 @@ export let fill = {
         $this.find('textarea').each(function () {
             let $textarea = $(this);
             if ($textarea.attr('required') !== undefined) {
-                fill.field($textarea, type);
+                fill.field($textarea);
             }
         });
 
