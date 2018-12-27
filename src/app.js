@@ -27,7 +27,7 @@ import {check} from "./modules/checker";
         let position = '110%';
         let $this = $(this);
         if ($('body').find('.test-form-wrapper')) {
-            $this.unwrap();
+            $this.unwrap('.test-form-wrapper');
         }
 
         $this.wrap('<div class="test-form-wrapper"></div>');
