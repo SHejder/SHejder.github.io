@@ -3,7 +3,7 @@ import {check} from "./modules/checker";
 
 (function ($) {
 
-    var screenWidth = $(window).width();
+    // var screenWidth = $(window).width();
     var defaults = {
         // дефолтные опции
         template: function () {
@@ -42,10 +42,6 @@ import {check} from "./modules/checker";
 
         let $widget = $this.find('.test-wrap');
 
-        $widget.css({
-            top: position.top,
-            left: position.left
-        });
 
         let val;
 
@@ -76,14 +72,14 @@ import {check} from "./modules/checker";
         });
 
 
-        if ($this.width() === screenWidth) {
-            position = '85%';
-        }
+        // if ($this.width() === screenWidth) {
+        //     position = '85%';
+        // }
 
         $widget.css({
             position: 'absolute',
-            top: 0,
-            left: position,
+            top: position.top,
+            left: position.left,
             backgroundColor: '#f5f5f5',
             opacity: 0.8,
             border: '2px solid black',
