@@ -35,11 +35,11 @@ export let check = {
         } else if (type === 'text') {
             return 'isText'
         } else if (type === 'number') {
-            return 'isNumber'
+            return type
         } else if (type === 'phone') {
             return 'isPhone'
         } else if (type === 'submit') {
-            return 'isSubmit'
+            return type
         } else {
             return false
         }
