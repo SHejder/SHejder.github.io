@@ -20,7 +20,7 @@ import {check} from "./modules/checker";
                         </select>
                         <div class="switcher close"><img src="`+defaults.appPath+`/img/arrow-down-left.svg" alt="open" title="Click to open"></div>                      
                     </div>
-                    <button type="button">Заполнить</button> 
+                    <button class="fill" type="button">Заполнить</button> 
                     <button class="clean" type="button">Сброс</button> 
                 </div>`
         }
@@ -76,7 +76,7 @@ import {check} from "./modules/checker";
                 $switcher.addClass('open');
             } else if ($switcher.hasClass('open')) {
                 $switcher.removeClass('open');
-                if($widget.find('.fixture-type').val() !== ''){
+                if($widget.find('button').is(':visible') ){
                     $widget.find('button').toggle();
                 }
 
@@ -130,7 +130,7 @@ import {check} from "./modules/checker";
            });
         });
 
-        $widget.find('button').on('click', function () {
+        $widget.find('fill').on('click', function () {
             let $button = $(this);
             $button.text('Перезаполнить');
             if (val === 'required') {
