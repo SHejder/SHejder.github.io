@@ -18,7 +18,7 @@ import {check} from "./modules/checker";
                             <option value="required">Только обязательные</option>  
                             <option value="all">Все доступные</option>  
                         </select>
-                        <div class="switcher"><img src="`+defaults.appPath+`/img/arrow-down-left.svg" alt="Open" title="Click to open"></div>                      
+                        <div class="switcher close"><img src="`+defaults.appPath+`/img/arrow-down-left.svg" alt="Open" title="Click to open"></div>                      
                     </div>
                     <button type="button">Заполнить</button> 
                 </div>`
@@ -51,11 +51,23 @@ import {check} from "./modules/checker";
         let val;
 
         $switcher.on('click',function () {
-            $widget.css({
-                width: 'auto',
-                height: 'auto'
-            });
-            $switcher.find('img').attr('src', defaults.appPath+'/img/arrow-down-left.svg');
+            if ($switcher.hasClass('close')){
+                $switcher.removeClass('close');
+                $widget.css({
+                    width: 'auto',
+                    height: 'auto'
+                });
+                $switcher.find('img').attr('src', defaults.appPath+'/img/arrow-up-right.svg');
+                $widget.find('select').toggle();
+                $switcher.addClass('open');
+            } else if ($switcher.hasClass('open')) {
+                $switcher.removeClass('open');
+                $widget.css({
+                    width: '32px',
+                    height: '32px'
+                });
+                $widget.find('select').toggle();
+            }
 
         });
 
@@ -64,9 +76,7 @@ import {check} from "./modules/checker";
             let $select = $(this);
             val = $select.val();
 
-            $widget.find('button').css({
-                display: 'block'
-            })
+            $widget.find('button').toggle();
 
         });
 
@@ -100,22 +110,24 @@ import {check} from "./modules/checker";
         $widget.css({
             position: 'absolute',
             top: 0,
-            left: /*position*/'79%',
+            left: /*position*/'94%',
             backgroundColor: '#f5f5f5',
             opacity: 0.8,
             border: '2px solid black',
             borderRadius: '2px',
             zIndex: 999999,
-            overflow: 'hidden',
             width: '32px',
             height: '32px'
+
         });
 
         $widget.find('select').css({
             margin: '10px',
             width: 'auto',
             padding: '4px',
-            height: 'auto'
+            height: 'auto',
+            display: 'none'
+
         });
 
         $widget.find('button').css({
@@ -127,7 +139,6 @@ import {check} from "./modules/checker";
         });
 
         $widget.find('.switcher').css({
-            margin: '10px',
             padding: '4px',
             width: '28px',
             height: '28px',
@@ -139,8 +150,6 @@ import {check} from "./modules/checker";
             display: 'flex',
             verticalAlign: 'baseline',
             justifyContent: 'space-around',
-            height: '48px'
-
         });
 
 
