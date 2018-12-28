@@ -21,6 +21,7 @@ import {check} from "./modules/checker";
                         <div class="switcher close"><img src="`+defaults.appPath+`/img/arrow-down-left.svg" alt="open" title="Click to open"></div>                      
                     </div>
                     <button type="button">Заполнить</button> 
+                    <button class="clean" type="button">Сброс</button> 
                 </div>`
         }
     };
@@ -113,7 +114,21 @@ import {check} from "./modules/checker";
 
 
         });
+        //кнопки
+        $widget.find('clean').on('click', function () {
+           let $button = $(this);
+           $this.find('input').each(function () {
 
+
+               let $input = $(this);
+               if (type !== 'submit' && $input.is(':visible')) {
+                   $input.val('');
+               }
+
+               $button.text('Заполнить');
+
+           });
+        });
 
         $widget.find('button').on('click', function () {
             let $button = $(this);
@@ -173,8 +188,8 @@ import {check} from "./modules/checker";
 
         $widget.find('.switcher').css({
             padding: '4px',
-            width: '28px',
-            height: '28px',
+            // width: '28px',
+            // height: '28px',
             display: 'block',
             border: '1px solid black'
         });
