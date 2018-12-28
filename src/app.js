@@ -115,7 +115,7 @@ import {check} from "./modules/checker";
 
         });
         //кнопки
-        $widget.find('clean').on('click', function () {
+        $widget.find('.clean').on('click', function () {
            let $button = $(this);
            $this.find('input').each(function () {
 
