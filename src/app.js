@@ -63,7 +63,7 @@ import {check} from "./modules/checker";
 
                 });
                 $switcher.find('img').attr('src', defaults.appPath+'/img/arrow-up-right.svg');
-                $widget.find('select').slideToggle();
+                $widget.find('select').toggle();
                 $switcher.addClass('open');
             } else if ($switcher.hasClass('open')) {
                 $switcher.removeClass('open');
@@ -81,7 +81,7 @@ import {check} from "./modules/checker";
 
                 $switcher.find('img').attr('src', defaults.appPath+'/img/arrow-down-left.svg');
 
-                $widget.find('select').slideToggle();
+                $widget.find('select').toggle();
                 $switcher.addClass('close');
 
             }
