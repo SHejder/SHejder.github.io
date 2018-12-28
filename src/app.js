@@ -192,7 +192,8 @@ import {check} from "./modules/checker";
             width: '28px',
             // height: '28px',
             display: 'block',
-            border: '1px solid black'
+            // border: '1px solid black'
+            boxSizing:'unset'
         });
 
         $widget.find('.top-wrapper').css({
