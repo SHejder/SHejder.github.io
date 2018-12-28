@@ -18,7 +18,7 @@ import {check} from "./modules/checker";
                             <option value="required">Только обязательные</option>  
                             <option value="all">Все доступные</option>  
                         </select>
-                        <div class="switcher close"><img src="`+defaults.appPath+`/img/arrow-down-left.svg" alt="open" title="Click to open"></div>                      
+                        <div class="switcher close"><img src="` + defaults.appPath + `/img/arrow-down-left.svg" alt="open" title="Click to open"></div>                      
                     </div>
                     <button class="fill" type="button">Заполнить</button> 
                     <button class="clean" type="button">Сброс</button> 
@@ -51,8 +51,8 @@ import {check} from "./modules/checker";
         let $switcher = $widget.find('.switcher');
         let val;
 
-        $switcher.on('click',function () {
-            if ($switcher.hasClass('close')){
+        $switcher.on('click', function () {
+            if ($switcher.hasClass('close')) {
                 $switcher.removeClass('close');
 
                 $widget.css({
@@ -63,11 +63,11 @@ import {check} from "./modules/checker";
                 $switcher.css({
                     margin: 'auto 10px'
                 });
-                if($widget.find('.fixture-type').val() !== ''){
+                if ($widget.find('.fixture-type').val() !== '') {
                     $widget.find('button').toggle();
                 }
 
-                $switcher.find('img').attr('src', defaults.appPath+'/img/arrow-up-right.svg');
+                $switcher.find('img').attr('src', defaults.appPath + '/img/arrow-up-right.svg');
                 $switcher.find('img').attr('title', 'Click to close');
                 $switcher.find('img').attr('alt', 'close');
                 $widget.find('select').toggle();
@@ -76,7 +76,7 @@ import {check} from "./modules/checker";
                 $switcher.addClass('open');
             } else if ($switcher.hasClass('open')) {
                 $switcher.removeClass('open');
-                if($widget.find('button').is(':visible') ){
+                if ($widget.find('button').is(':visible')) {
                     $widget.find('button').toggle();
                 }
 
@@ -91,7 +91,7 @@ import {check} from "./modules/checker";
 
                 });
 
-                $switcher.find('img').attr('src', defaults.appPath+'/img/arrow-down-left.svg');
+                $switcher.find('img').attr('src', defaults.appPath + '/img/arrow-down-left.svg');
                 $switcher.find('img').attr('title', 'Click to open');
                 $switcher.find('img').attr('alt', 'open');
 
@@ -108,7 +108,7 @@ import {check} from "./modules/checker";
 
             let $select = $(this);
             val = $select.val();
-            if ($widget.find('button').is(':hidden')){
+            if ($widget.find('button').is(':hidden')) {
                 $widget.find('button').toggle();
             }
 
@@ -119,16 +119,23 @@ import {check} from "./modules/checker";
         //кнопки
         $widget.find('.clean').on('click', function () {
 
-           $this.find('input').each(function () {
+            $this.find('input').each(function () {
 
-               let $input = $(this);
-               if (check.type($input) !== 'submit' && $input.is(':visible')) {
-                   $input.val('');
-               }
+                let $input = $(this);
+                if (check.type($input) !== 'submit' && $input.is(':visible')) {
+                    $input.val('');
+                }
 
-               $widget.find('.fill').text('Заполнить');
+                $widget.find('.fill').text('Заполнить');
 
-           });
+            });
+            $this.find('textarea').each(function () {
+                let $textarea = $(this);
+                if($textarea.is(':visible')) {
+                    $textarea.text('');
+                }
+            });
+
         });
 
         $widget.find('.fill').on('click', function () {
@@ -144,7 +151,6 @@ import {check} from "./modules/checker";
 
             }
         });
-
 
 
         //положение виджета
@@ -195,7 +201,7 @@ import {check} from "./modules/checker";
             // height: '28px',
             display: 'block',
             // border: '1px solid black'
-            boxSizing:'unset',
+            boxSizing: 'unset',
             cursor: 'pointer'
         });
 
