@@ -193,7 +193,8 @@ import {check} from "./modules/checker";
             // height: '28px',
             display: 'block',
             // border: '1px solid black'
-            boxSizing:'unset'
+            boxSizing:'unset',
+            cursor: 'pointer'
         });
 
         $widget.find('.top-wrapper').css({
