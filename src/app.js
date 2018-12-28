@@ -116,7 +116,7 @@ import {check} from "./modules/checker";
         });
         //кнопки
         $widget.find('.clean').on('click', function () {
-           let $button = $(this);
+           // let $button = $(this);
            $this.find('input').each(function () {
 
 
@@ -125,7 +125,7 @@ import {check} from "./modules/checker";
                    $input.val('');
                }
 
-               $button.text('Заполнить');
+               $widget.find('.fill').text('Заполнить');
 
            });
         });
