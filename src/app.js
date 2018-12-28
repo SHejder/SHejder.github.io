@@ -130,7 +130,7 @@ import {check} from "./modules/checker";
            });
         });
 
-        $widget.find('fill').on('click', function () {
+        $widget.find('.fill').on('click', function () {
             let $button = $(this);
             $button.text('Перезаполнить');
             if (val === 'required') {
