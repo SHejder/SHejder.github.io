@@ -1,6 +1,6 @@
 export let getData = {
     name: function () {
-        let arr = ['Иван', 'Стенпан', 'Сергей', 'Ирина', 'Виктория', 'Светлана'];
+        let arr = ['Иван', 'Степан', 'Сергей', 'Ирина', 'Виктория', 'Светлана'];
         return arr[getData.randomInt(arr.length - 1)]
 
     },

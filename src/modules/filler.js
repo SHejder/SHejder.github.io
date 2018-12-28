@@ -57,6 +57,9 @@ export let fill = {
         $this.find('textarea').each(function () {
             let $textarea = $(this);
             fill.field($textarea, 'textarea');
+            $textarea.change();
+            $textarea.blur();
+
         });
         $this.find('input').each(function () {
 
@@ -71,6 +74,9 @@ export let fill = {
 
             if ($input.is(':visible')) {
                 fill.field($input, type);
+                $input.change();
+                $input.blur();
+
             }
         })
 
