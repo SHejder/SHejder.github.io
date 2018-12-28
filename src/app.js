@@ -125,10 +125,16 @@ import {check} from "./modules/checker";
             if (val === 'negative') {
 
                 let checkboxes = `
-                <p><input type="checkbox" name="phone">Телефон</p>
-                <p><input type="checkbox" name="email">Почта</p>`;
+                <p><input class="checkbox" type="checkbox" name="phone">Телефон</p>
+                <p><input class="checkbox" type="checkbox" name="email">Почта</p>`;
 
                 $widget.find('.top-wrapper').append(checkboxes);
+            } else {
+                if ($widget.find('.checkbox')){
+                    $widget.find('.checkbox').each(function () {
+                        $widget.find('.checkbox').remove();
+                    })
+                }
             }
 
 
@@ -222,7 +228,7 @@ import {check} from "./modules/checker";
             maxWidth: '243px'
         });
 
-        $widget.find('p input').css({
+        $widget.find('.checkbox').css({
             margin: '5px',
             fontColor: 'black'
         });
