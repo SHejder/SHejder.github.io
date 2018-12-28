@@ -67,7 +67,7 @@ import {check} from "./modules/checker";
                     height: 'auto',
                 });
                 $switcher.css({
-                    margin: 'auto 10px'
+                    margin: 'auto 8px'
                 });
                 if ($widget.find('.fixture-type').val() !== '') {
                     $widget.find('button').toggle();
@@ -218,6 +218,11 @@ import {check} from "./modules/checker";
             display: 'flex',
             verticalAlign: 'baseline',
             justifyContent: 'space-around',
+            flexWrap: 'wrap'
+        });
+
+        $widget.find('input[type="checkbox"]').css({
+            margin: '5px'
         });
 
 
