@@ -25,8 +25,7 @@ import {check} from "./modules/checker";
                 </div>`
         }
     };
-    //
-
+//=======================================> Поиск форм и размещение виджета <============================================
 
     $('form').each(function () {
 
@@ -51,14 +50,20 @@ import {check} from "./modules/checker";
         let $switcher = $widget.find('.switcher');
         let val;
 
+
+//===================================> свитчер <========================================================================
+
         $switcher.on('click', function () {
+
+            //проверяем состойние кнопки
             if ($switcher.hasClass('close')) {
+
+                //если виджет закрыт
                 $switcher.removeClass('close');
 
                 $widget.css({
                     width: 'auto',
                     height: 'auto',
-                    // left: /*position*/'57%',
                 });
                 $switcher.css({
                     margin: 'auto 10px'
@@ -75,6 +80,8 @@ import {check} from "./modules/checker";
 
                 $switcher.addClass('open');
             } else if ($switcher.hasClass('open')) {
+
+                //если виджет открыт
                 $switcher.removeClass('open');
                 if ($widget.find('button').is(':visible')) {
                     $widget.find('button').toggle();
@@ -83,7 +90,6 @@ import {check} from "./modules/checker";
                 $widget.css({
                     width: '32px',
                     height: '32px',
-                    // left: /*position*/'94%',
 
                 });
                 $switcher.css({
@@ -104,6 +110,9 @@ import {check} from "./modules/checker";
 
         });
 
+
+//==============================================> кнопки <==============================================================
+
         $widget.find('.fixture-type').on('change', function () {
 
             let $select = $(this);
@@ -111,12 +120,8 @@ import {check} from "./modules/checker";
             if ($widget.find('button').is(':hidden')) {
                 $widget.find('button').toggle();
             }
-
-
         });
 
-
-        //кнопки
         $widget.find('.clean').on('click', function () {
 
             $this.find('input').each(function () {
@@ -152,17 +157,8 @@ import {check} from "./modules/checker";
             }
         });
 
+//=============================================> стили виджета <========================================================
 
-        //положение виджета
-        // let position;
-        // if ($this.width() === screenWidth) {
-        //      position = '85%';
-        // } else {
-        //     position = '110%';
-        // }
-
-
-        //стили виджета
         $widget.css({
             position: 'absolute',
             top: 0,
