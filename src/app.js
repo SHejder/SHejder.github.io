@@ -132,7 +132,7 @@ import {check} from "./modules/checker";
             $this.find('textarea').each(function () {
                 let $textarea = $(this);
                 if($textarea.is(':visible')) {
-                    $textarea.text('');
+                    $textarea.val('');
                 }
             });
 
