@@ -64,6 +64,10 @@ import {check} from "./modules/checker";
                 });
                 $switcher.find('img').attr('src', defaults.appPath+'/img/arrow-up-right.svg');
                 $widget.find('select').toggle();
+                if($widget.find('.fixture-type').val() !== ''){
+                    $widget.find('button').toggle();
+                }
+
 
                 $switcher.addClass('open');
             } else if ($switcher.hasClass('open')) {
@@ -83,9 +87,6 @@ import {check} from "./modules/checker";
                 $switcher.find('img').attr('src', defaults.appPath+'/img/arrow-down-left.svg');
 
                 $widget.find('select').toggle();
-                if($widget.find('button').is('visible') && $widget.find('.fixture-type').val() !== ''){
-                    $widget.find('button').toggle();
-                }
 
                 $switcher.addClass('close');
 
