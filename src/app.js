@@ -82,7 +82,7 @@ import {check} from "./modules/checker";
                 $widget.css({
                     width: '32px',
                     height: '32px',
-                    left: /*position*/'94%',
+                    // left: /*position*/'94%',
 
                 });
                 $switcher.css({
@@ -144,7 +144,8 @@ import {check} from "./modules/checker";
         $widget.css({
             position: 'absolute',
             top: 0,
-            left: /*position*/'94%',
+            right: '10px',
+            //left: /*position*/'94%',
             backgroundColor: '#f5f5f5',
             opacity: 0.9,
             border: '2px solid black',
