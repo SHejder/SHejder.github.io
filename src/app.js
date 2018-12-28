@@ -76,7 +76,7 @@ import {check} from "./modules/checker";
                 $switcher.addClass('open');
             } else if ($switcher.hasClass('open')) {
                 $switcher.removeClass('open');
-                if($widget.find('.button').is('visible')){
+                if($widget.find('.fixture-type').val() !== ''){
                     $widget.find('button').toggle();
                 }
 
