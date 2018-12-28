@@ -136,7 +136,7 @@ import {check} from "./modules/checker";
             } else {
                 if ($widget.find('.checkbox')){
                     $widget.find('.checkbox').each(function () {
-                        $widget.find('.checkbox').remove();
+                        $widget.find('p').remove();
                     })
                 }
             }
