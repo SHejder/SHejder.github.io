@@ -64,7 +64,6 @@ import {check} from "./modules/checker";
                 });
                 $switcher.find('img').attr('src', defaults.appPath+'/img/arrow-up-right.svg');
                 $widget.find('select').toggle();
-                $widget.find('button').toggle();
 
                 $switcher.addClass('open');
             } else if ($switcher.hasClass('open')) {
@@ -151,10 +150,8 @@ import {check} from "./modules/checker";
         });
 
         $widget.find('button').css({
-            margin: '10px auto',
+            margin: '10px 20px',
             padding: '4px',
-            width: 'auto',
-            height: 'auto',
             display: 'none'
         });
 
