@@ -219,11 +219,12 @@ import {check} from "./modules/checker";
             verticalAlign: 'baseline',
             justifyContent: 'space-around',
             flexWrap: 'wrap',
-            maxWidht: '243px'
+            maxWidth: '243px'
         });
 
         $widget.find('p input').css({
-            margin: '5px'
+            margin: '5px',
+            fontColor: 'black'
         });
 
 
