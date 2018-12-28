@@ -118,11 +118,8 @@ import {check} from "./modules/checker";
 
         //кнопки
         $widget.find('.clean').on('click', function () {
-           // let $button = $(this);
 
-            console.log('click');
            $this.find('input').each(function () {
-                console.log('input');
 
                let $input = $(this);
                if (check.type($input) !== 'submit' && $input.is(':visible')) {
@@ -192,7 +189,7 @@ import {check} from "./modules/checker";
 
         $widget.find('.switcher').css({
             padding: '4px',
-            // width: '28px',
+            width: '28px',
             // height: '28px',
             display: 'block',
             border: '1px solid black'
