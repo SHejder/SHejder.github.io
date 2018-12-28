@@ -95,6 +95,7 @@ import {check} from "./modules/checker";
 
             let $select = $(this);
             val = $select.val();
+            $widget.find('button').toggle();
 
 
         });
