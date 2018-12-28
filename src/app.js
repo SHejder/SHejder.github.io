@@ -125,8 +125,8 @@ import {check} from "./modules/checker";
             if (val === 'negative') {
 
                 let checkboxes = `
-                <input type="checkbox" value="Телефон">
-                <input type="checkbox" value="Почта">`;
+                <p><input type="checkbox" name="phone">Телефон</p>
+                <p><input type="checkbox" name="email">Почта</p>`;
 
                 $widget.find('.top-wrapper').append(checkboxes);
             }
