@@ -81,7 +81,7 @@ import {check} from "./modules/checker";
 
                 $switcher.find('img').attr('src', defaults.appPath+'/img/arrow-down-left.svg');
 
-                $widget.find('select').toggle();
+                $widget.find('select').toggle(400);
                 $switcher.addClass('close');
 
             }
@@ -93,7 +93,7 @@ import {check} from "./modules/checker";
             let $select = $(this);
             val = $select.val();
 
-            $widget.find('button').toggle();
+            $widget.find('button').toggle(400);
 
         });
 
