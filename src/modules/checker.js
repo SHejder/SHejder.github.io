@@ -1,6 +1,6 @@
 export let check = {
     name: function ($input) {
-        let name = $input.attr('name');
+        let name = $input.attr('name').toLowerCase();
         if (name !== undefined) {
             if (~name.indexOf('phone')) {
                 return 'isPhone'
