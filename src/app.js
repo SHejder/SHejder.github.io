@@ -129,6 +129,10 @@ import {check} from "./modules/checker";
                 <p><input class="checkbox" type="checkbox" name="email">Почта</p>`;
 
                 $widget.find('.top-wrapper').append(checkboxes);
+                $widget.find('.checkbox').css({
+                    margin: '5px',
+                    fontColor: 'black'
+                });
             } else {
                 if ($widget.find('.checkbox')){
                     $widget.find('.checkbox').each(function () {
@@ -228,10 +232,7 @@ import {check} from "./modules/checker";
             maxWidth: '243px'
         });
 
-        $widget.find('.checkbox').css({
-            margin: '5px',
-            fontColor: 'black'
-        });
+
 
 
     });
