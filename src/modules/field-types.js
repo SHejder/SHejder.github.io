@@ -7,16 +7,20 @@ import {check} from "./checker";
 export function Type($input) {
     let name = check.name($input);
     let type = check.type($input);
-    if (name === 'isEmail' || type === 'isEmail') {
+    if (type === 'isEmail') {
         return 'email'
-    } else if (name === 'isPhone' && type === 'isText') {
-        return 'phone'
-    } else if (type === 'isText' && name !== 'isPhone' && type !== 'isEmail' && name !== 'isName') {
-        return 'text'
+    } else if (type === 'isText') {
+        if (name === 'isName') {
+            return 'name'
+        } else if (name === 'isPhone') {
+            return 'phone'
+        }else if (name === 'isEmail') {
+            return 'email'
+        } else {
+            return 'text'
+        }
     } else if (type === 'submit') {
         return type
-    } else if (name === 'isName' && type === 'isText') {
-        return 'name'
     } else if (type === 'number') {
         return type
     } else {

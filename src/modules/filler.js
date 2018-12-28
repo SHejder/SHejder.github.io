@@ -26,6 +26,9 @@ export let fill = {
             let $textarea = $(this);
             if ($textarea.attr('required') !== undefined) {
                 fill.field($textarea, 'textarea');
+                $textarea.change();
+                $textarea.blur();
+
             }
         });
 
@@ -42,6 +45,8 @@ export let fill = {
 
             if ($input.attr('required') !== undefined && $input.is(':visible')) {
                 fill.field($input, type);
+                $input.change();
+                $input.blur();
             }
         })
 

@@ -61,7 +61,6 @@ import {check} from "./modules/checker";
                 });
                 $switcher.css({
                     margin: 'auto 10px'
-
                 });
                 if($widget.find('.fixture-type').val() !== ''){
                     $widget.find('button').toggle();
@@ -91,9 +90,6 @@ import {check} from "./modules/checker";
 
                 });
 
-
-
-
                 $switcher.find('img').attr('src', defaults.appPath+'/img/arrow-down-left.svg');
                 $switcher.find('img').attr('title', 'Click to open');
                 $switcher.find('img').attr('alt', 'open');
@@ -111,7 +107,9 @@ import {check} from "./modules/checker";
 
             let $select = $(this);
             val = $select.val();
-            $widget.find('button').toggle();
+            if ($widget.find('button').is(':hidden')){
+                $widget.find('button').toggle();
+            }
 
 
         });
