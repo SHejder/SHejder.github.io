@@ -57,7 +57,7 @@ import {check} from "./modules/checker";
                 $widget.css({
                     width: 'auto',
                     height: 'auto',
-                    left: /*position*/'57%',
+                    // left: /*position*/'57%',
                 });
                 $switcher.css({
                     margin: 'auto 10px'
