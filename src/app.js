@@ -114,6 +114,8 @@ import {check} from "./modules/checker";
 
 
         });
+
+
         //кнопки
         $widget.find('.clean').on('click', function () {
            // let $button = $(this);
@@ -123,7 +125,7 @@ import {check} from "./modules/checker";
                 console.log('input');
 
                let $input = $(this);
-               if (type !== 'submit' && $input.is(':visible')) {
+               if (check.type($input) !== 'submit' && $input.is(':visible')) {
                    $input.val('');
                }
 
