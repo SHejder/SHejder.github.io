@@ -83,6 +83,11 @@ import {check} from "./modules/checker";
 
                 });
 
+                if($widget.find('.button').is('visible')){
+                    $widget.find('button').toggle();
+                }
+
+
 
                 $switcher.find('img').attr('src', defaults.appPath+'/img/arrow-down-left.svg');
 
