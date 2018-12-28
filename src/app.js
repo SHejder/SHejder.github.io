@@ -9,14 +9,14 @@ import {check} from "./modules/checker";
         template: function () {
             return `
                 <div class="test-wrap" >
-                <div class="top-wrapper">
-                    <div class="switcher"><img src="/build/js/img/arrow-up-right.svg" alt="Open" title="Click to open"></div>                      
-                    <select class="fixture-type">
-                        <option value="">Как заполнить поля?</option>   
-                        <option value="required">Только обязательные</option>  
-                        <option value="all">Все доступные</option>  
-                    </select>
-                </div>
+                    <div class="top-wrapper">
+                        <select class="fixture-type">
+                            <option value="">Как заполнить поля?</option>   
+                            <option value="required">Только обязательные</option>  
+                            <option value="all">Все доступные</option>  
+                        </select>
+                        <div class="switcher"><img src="https://shejder.github.io/build/js/img/arrow-up-right.svg" alt="Open" title="Click to open"></div>                      
+                    </div>
                     <button type="button">Заполнить</button> 
                 </div>`
         }
@@ -90,7 +90,8 @@ import {check} from "./modules/checker";
             opacity: 0.8,
             border: '2px solid black',
             borderRadius: '2px',
-            zIndex: 999999
+            zIndex: 999999,
+            overflow: 'hidden'
         });
 
         $widget.find('select').css({
@@ -109,7 +110,7 @@ import {check} from "./modules/checker";
         });
 
         $widget.find('.switcher').css({
-            margin: '4px',
+            margin: '10px',
             padding: '4px',
             width: '28px',
             height: '28px',
@@ -119,6 +120,9 @@ import {check} from "./modules/checker";
 
         $widget.find('.top-wrapper').css({
             display: 'flex',
+            verticalAlign: 'baseline',
+            justifyContent: 'space-around',
+            height: '48px'
 
         });
 
