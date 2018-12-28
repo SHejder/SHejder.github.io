@@ -83,7 +83,9 @@ import {check} from "./modules/checker";
                 $switcher.find('img').attr('src', defaults.appPath+'/img/arrow-down-left.svg');
 
                 $widget.find('select').toggle();
-                $widget.find('button').toggle();
+                if($widget.find('button').is('visible') && $widget.find('.fixture-type').val() !== ''){
+                    $widget.find('button').toggle();
+                }
 
                 $switcher.addClass('close');
 
