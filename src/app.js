@@ -218,10 +218,11 @@ import {check} from "./modules/checker";
             display: 'flex',
             verticalAlign: 'baseline',
             justifyContent: 'space-around',
-            flexWrap: 'wrap'
+            flexWrap: 'wrap',
+            maxWidht: '243px'
         });
 
-        $widget.find('input[type="checkbox"]').css({
+        $widget.find('p input').css({
             margin: '5px'
         });
 
