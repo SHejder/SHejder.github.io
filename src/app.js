@@ -17,6 +17,7 @@ import {check} from "./modules/checker";
                             <option value="">Как заполнить поля?</option>   
                             <option value="required">Только обязательные</option>  
                             <option value="all">Все доступные</option>  
+                            <option value="negative">Негативный тест</option>  
                         </select>
                         <div class="switcher close"><img src="` + defaults.appPath + `/img/arrow-down-left.svg" alt="open" title="Click to open"></div>                      
                     </div>
@@ -120,9 +121,21 @@ import {check} from "./modules/checker";
             if ($widget.find('button').is(':hidden')) {
                 $widget.find('button').toggle();
             }
+
+            if (val === 'negative') {
+
+                let checkboxes = `
+                <input type="checkbox" value="Телефон">
+                <input type="checkbox" value="Почта">`;
+
+                $widget.find('.top-wrapper').append(checkboxes);
+            }
+
+
         });
 
         $widget.find('.clean').on('click', function () {
+
 
             $this.find('input').each(function () {
 
@@ -136,7 +149,7 @@ import {check} from "./modules/checker";
             });
             $this.find('textarea').each(function () {
                 let $textarea = $(this);
-                if($textarea.is(':visible')) {
+                if ($textarea.is(':visible')) {
                     $textarea.val('');
                 }
             });
