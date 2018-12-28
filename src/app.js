@@ -184,7 +184,9 @@ import {check} from "./modules/checker";
         $widget.find('button').css({
             margin: '10px 20px',
             padding: '4px',
-            display: 'none'
+            display: 'none',
+            cursor: 'pointer'
+
         });
 
         $widget.find('.switcher').css({
