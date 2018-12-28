@@ -6,6 +6,9 @@ import {check} from "./modules/checker";
     // let screenWidth = $(window).width();
     let defaults = {
         // дефолтные опции
+
+        appPath: 'https://shejder.github.io/build/js',
+
         template: function () {
             return `
                 <div class="test-wrap" >
@@ -15,7 +18,7 @@ import {check} from "./modules/checker";
                             <option value="required">Только обязательные</option>  
                             <option value="all">Все доступные</option>  
                         </select>
-                        <div class="switcher"><img src="https://shejder.github.io/build/js/img/arrow-up-right.svg" alt="Open" title="Click to open"></div>                      
+                        <div class="switcher"><img src="`+defaults.appPath+`/img/arrow-down-left.svg" alt="Open" title="Click to open"></div>                      
                     </div>
                     <button type="button">Заполнить</button> 
                 </div>`
@@ -44,7 +47,17 @@ import {check} from "./modules/checker";
 
 
         let $widget = $this.find('.test-wrap');
+        let $switcher = $widget.find('.switcher');
         let val;
+
+        $switcher.on('click',function () {
+            $widget.css({
+                width: 'auto',
+                height: 'auto'
+            });
+            $switcher.find('img').attr('src', defaults.appPath+'/img/arrow-down-left.svg');
+
+        });
 
         $widget.find('.fixture-type').on('change', function () {
 
@@ -72,6 +85,8 @@ import {check} from "./modules/checker";
             }
         });
 
+
+
         //положение виджета
         // let position;
         // if ($this.width() === screenWidth) {
@@ -91,7 +106,9 @@ import {check} from "./modules/checker";
             border: '2px solid black',
             borderRadius: '2px',
             zIndex: 999999,
-            overflow: 'hidden'
+            overflow: 'hidden',
+            width: '32px',
+            height: '32px'
         });
 
         $widget.find('select').css({
