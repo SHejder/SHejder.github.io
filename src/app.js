@@ -8,7 +8,8 @@ import {check} from "./modules/checker";
         // дефолтные опции
         template: function () {
             return `
-                <div class="test-wrap" >                      
+                <div class="test-wrap" >
+                    <div class="switcher"><img src="/build/js/img/arrow-up-right.svg" alt="Open" title="Click to open"></div>                      
                     <select class="fixture-type">
                         <option value="">Как заполнить поля?</option>   
                         <option value="required">Только обязательные</option>  
@@ -24,24 +25,24 @@ import {check} from "./modules/checker";
 
     $('form').each(function () {
 
-        let position = '110%';
         let $this = $(this);
-        // $this.find('input')
+
+
+        //проверяем наличие виджета на странице
         if ($this.find('.test-wrap')) {
             $this.find('.test-wrap').remove();
         }
+
+        //добавляем виджет
         if (check.action($this) !== 'isSearch' && $this.find('input').length > 1) {
             $this.append(defaults.template);
         }
-
-        //
         $this.css({
             position:'relative'
         });
 
 
         let $widget = $this.find('.test-wrap');
-
         let val;
 
         $widget.find('.fixture-type').on('change', function () {
@@ -70,15 +71,20 @@ import {check} from "./modules/checker";
             }
         });
 
+        //положение виджета
+        // let position;
+        // if ($this.width() === screenWidth) {
+        //      position = '85%';
+        // } else {
+        //     position = '110%';
+        // }
 
-        if ($this.width() === screenWidth) {
-            position = '85%';
-        }
 
+        //стили виджета
         $widget.css({
             position: 'absolute',
             top: 0,
-            left: position,
+            left: /*position*/'79%',
             backgroundColor: '#f5f5f5',
             opacity: 0.8,
             border: '2px solid black',
@@ -99,6 +105,15 @@ import {check} from "./modules/checker";
             width: 'auto',
             height: 'auto',
             display: 'none'
+        });
+
+        $widget.find('.switcher').css({
+            margin: '4px',
+            padding: '4px',
+            width: 'auto',
+            height: 'auto',
+            display: 'block',
+            border: '1px solid black'
         });
 
 
