@@ -18,7 +18,7 @@ import {check} from "./modules/checker";
                             <option value="required">Только обязательные</option>  
                             <option value="all">Все доступные</option>  
                         </select>
-                        <div class="switcher close"><img src="`+defaults.appPath+`/img/arrow-down-left.svg" alt="Open" title="Click to open"></div>                      
+                        <div class="switcher close"><img src="`+defaults.appPath+`/img/arrow-down-left.svg" alt="open" title="Click to open"></div>                      
                     </div>
                     <button type="button">Заполнить</button> 
                 </div>`
@@ -53,6 +53,7 @@ import {check} from "./modules/checker";
         $switcher.on('click',function () {
             if ($switcher.hasClass('close')){
                 $switcher.removeClass('close');
+
                 $widget.css({
                     width: 'auto',
                     height: 'auto',
@@ -62,16 +63,23 @@ import {check} from "./modules/checker";
                     margin: 'auto 10px'
 
                 });
-                $switcher.find('img').attr('src', defaults.appPath+'/img/arrow-up-right.svg');
-                $widget.find('select').toggle();
                 if($widget.find('.fixture-type').val() !== ''){
                     $widget.find('button').toggle();
                 }
+
+                $switcher.find('img').attr('src', defaults.appPath+'/img/arrow-up-right.svg');
+                $switcher.find('img').attr('title', 'Click to close');
+                $switcher.find('img').attr('alt', 'close');
+                $widget.find('select').toggle();
 
 
                 $switcher.addClass('open');
             } else if ($switcher.hasClass('open')) {
                 $switcher.removeClass('open');
+                if($widget.find('.button').is('visible')){
+                    $widget.find('button').toggle();
+                }
+
                 $widget.css({
                     width: '32px',
                     height: '32px',
@@ -83,13 +91,13 @@ import {check} from "./modules/checker";
 
                 });
 
-                if($widget.find('.button').is('visible')){
-                    $widget.find('button').toggle();
-                }
 
 
 
                 $switcher.find('img').attr('src', defaults.appPath+'/img/arrow-down-left.svg');
+                $switcher.find('img').attr('title', 'Click to open');
+                $switcher.find('img').attr('alt', 'open');
+
 
                 $widget.find('select').toggle();
 
