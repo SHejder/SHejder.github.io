@@ -59,8 +59,8 @@ import {check} from "./modules/checker";
                     left: /*position*/'57%',
                 });
                 $switcher.css({
-                    margin: 'auto 10px'
-                })
+                    margin: 'auto'
+                });
                 $switcher.find('img').attr('src', defaults.appPath+'/img/arrow-up-right.svg');
                 $widget.find('select').toggle();
                 $switcher.addClass('open');
@@ -68,8 +68,14 @@ import {check} from "./modules/checker";
                 $switcher.removeClass('open');
                 $widget.css({
                     width: '32px',
-                    height: '32px'
+                    height: '32px',
+                    left: /*position*/'94%',
+
                 });
+                $switcher.css({
+                    margin: 'auto 10px'
+                });
+
 
                 $switcher.find('img').attr('src', defaults.appPath+'/img/arrow-down-left.svg');
 
