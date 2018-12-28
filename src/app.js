@@ -55,8 +55,12 @@ import {check} from "./modules/checker";
                 $switcher.removeClass('close');
                 $widget.css({
                     width: 'auto',
-                    height: 'auto'
+                    height: 'auto',
+                    left: /*position*/'57%',
                 });
+                $switcher.css({
+                    margin: 'auto 10px'
+                })
                 $switcher.find('img').attr('src', defaults.appPath+'/img/arrow-up-right.svg');
                 $widget.find('select').toggle();
                 $switcher.addClass('open');
@@ -66,7 +70,12 @@ import {check} from "./modules/checker";
                     width: '32px',
                     height: '32px'
                 });
+
+                $switcher.find('img').attr('src', defaults.appPath+'/img/arrow-down-left.svg');
+
                 $widget.find('select').toggle();
+                $switcher.addClass('close');
+
             }
 
         });
@@ -112,7 +121,7 @@ import {check} from "./modules/checker";
             top: 0,
             left: /*position*/'94%',
             backgroundColor: '#f5f5f5',
-            opacity: 0.8,
+            opacity: 0.9,
             border: '2px solid black',
             borderRadius: '2px',
             zIndex: 999999,
