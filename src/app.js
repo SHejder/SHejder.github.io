@@ -3,24 +3,25 @@ import {check} from "./modules/checker";
 
 (function ($) {
 
-    let screenWidth = $(window).width();
+    // let screenWidth = $(window).width();
     let defaults = {
         // дефолтные опции
         template: function () {
             return `
                 <div class="test-wrap" >
+                <div class="top-wrapper">
                     <div class="switcher"><img src="/build/js/img/arrow-up-right.svg" alt="Open" title="Click to open"></div>                      
                     <select class="fixture-type">
                         <option value="">Как заполнить поля?</option>   
                         <option value="required">Только обязательные</option>  
                         <option value="all">Все доступные</option>  
                     </select>
+                </div>
                     <button type="button">Заполнить</button> 
                 </div>`
         }
     };
     //
-
 
 
     $('form').each(function () {
@@ -38,7 +39,7 @@ import {check} from "./modules/checker";
             $this.append(defaults.template);
         }
         $this.css({
-            position:'relative'
+            position: 'relative'
         });
 
 
@@ -110,10 +111,15 @@ import {check} from "./modules/checker";
         $widget.find('.switcher').css({
             margin: '4px',
             padding: '4px',
-            width: 'auto',
-            height: 'auto',
+            width: '28px',
+            height: '28px',
             display: 'block',
             border: '1px solid black'
+        });
+
+        $widget.find('.top-wrapper').css({
+            display: 'flex',
+
         });
 
 
