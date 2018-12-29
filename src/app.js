@@ -144,6 +144,9 @@ import {check} from "./modules/checker";
                     margin: '5px',
                     color: 'black'
                 });
+                $widget.find('p').css({
+                    color: 'black'
+                });
             } else {
                 if ($widget.find('.checkbox')) {
                     $widget.find('.checkbox').each(function () {
