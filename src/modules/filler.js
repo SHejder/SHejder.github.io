@@ -115,7 +115,6 @@ export let fill = {
 
             if ($input.is(':visible')) {
                 if (type === 'phone' && $phoneBox.prop('checked')) {
-                    console.log($phoneBox.prop('checked'));
                     fill.badField($input, type);
                     $input.change();
                     $input.blur();
