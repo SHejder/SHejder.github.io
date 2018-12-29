@@ -142,7 +142,7 @@ import {check} from "./modules/checker";
                 $widget.find('.top-wrapper').append(checkboxes);
                 $widget.find('.checkbox').css({
                     margin: '5px',
-                    fontColor: 'black'
+                    color: 'black'
                 });
             } else {
                 if ($widget.find('.checkbox')) {
