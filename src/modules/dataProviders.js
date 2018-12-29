@@ -34,5 +34,17 @@ export let getData = {
     },
     number:function () {
         return getData.randomInt(100)
+    },
+
+    badPhone: function () {
+        let arr = ['must be phone', '+6559asdas78', '-*/+!@#$!@$%'];
+
+        return arr[getData.randomInt(arr.length - 1)]
+    },
+
+    badEmail: function () {
+        let arr = ['mail', 'mail@darvin', 'mail@mail@mail'];
+
+        return arr[getData.randomInt(arr.length - 1)]
     }
 };

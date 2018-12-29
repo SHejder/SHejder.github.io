@@ -1,4 +1,5 @@
 export let check = {
+
     name: function ($input) {
         let name = $input.attr('name').toLowerCase();
         if (name !== undefined) {
@@ -39,6 +40,8 @@ export let check = {
         } else if (type === 'phone') {
             return 'isPhone'
         } else if (type === 'submit') {
+            return type
+        }else if (type === 'checkbox') {
             return type
         } else {
             return false

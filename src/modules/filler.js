@@ -21,6 +21,14 @@ export let fill = {
 
     },
 
+    badField: function ($field, type) {
+        if (type === 'phone') {
+            $field.val(getData.badPhone)
+        } else if (type === 'email') {
+            $field.val(getData.badEmail)
+        }
+    },
+
     required: function ($this) {
         $this.find('textarea').each(function () {
             let $textarea = $(this);
@@ -81,5 +89,47 @@ export let fill = {
         })
 
 
+    },
+
+    negative: function ($this) {
+        // let $checkbox = $this.find('.checkbox');
+        let $phoneBox = $this.find('.phoneBox');
+        let $emailBox = $this.find('.emailBox');
+
+        $this.find('textarea').each(function () {
+            let $textarea = $(this);
+            if ($textarea.attr('required') !== undefined) {
+                fill.field($textarea, 'textarea');
+                $textarea.change();
+                $textarea.blur();
+
+            }
+        });
+
+        $this.find('input').each(function () {
+
+            let $input = $(this);
+            let type = Type($input);
+
+
+
+            if ($input.is(':visible')) {
+                if (type === 'phone' && $phoneBox.prop('checked')) {
+                    console.log($phoneBox.prop('checked'));
+                    fill.badField($input, type);
+                    $input.change();
+                    $input.blur();
+                } else if (type === 'email' && $emailBox.prop('checked')) {
+                    fill.badField($input, type);
+                    $input.change();
+                    $input.blur();
+                } else {
+                    fill.field($input, type);
+                    $input.change();
+                    $input.blur();
+
+                }
+            }
+        })
     }
 };

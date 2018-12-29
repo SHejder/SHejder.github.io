@@ -26,6 +26,9 @@ import {check} from "./modules/checker";
                 </div>`
         }
     };
+
+
+
 //=======================================> Поиск форм и размещение виджета <============================================
 
     $('form').each(function () {
@@ -69,9 +72,13 @@ import {check} from "./modules/checker";
                 $switcher.css({
                     margin: 'auto 8px'
                 });
+                if ($widget.find('p') && $widget.find('p').is(':hidden')) {
+                    $widget.find('p').toggle();
+                }
                 if ($widget.find('.fixture-type').val() !== '') {
                     $widget.find('button').toggle();
                 }
+
 
                 $switcher.find('img').attr('src', defaults.appPath + '/img/arrow-up-right.svg');
                 $switcher.find('img').attr('title', 'Click to close');
@@ -87,6 +94,10 @@ import {check} from "./modules/checker";
                 if ($widget.find('button').is(':visible')) {
                     $widget.find('button').toggle();
                 }
+                if ($widget.find('p') && $widget.find('p').is(':visible')) {
+                    $widget.find('p').toggle();
+                }
+
 
                 $widget.css({
                     width: '32px',
@@ -125,8 +136,8 @@ import {check} from "./modules/checker";
             if (val === 'negative') {
 
                 let checkboxes = `
-                <p><input class="checkbox" type="checkbox" name="phone">Телефон</p>
-                <p><input class="checkbox" type="checkbox" name="email">Почта</p>`;
+                <p><input class="checkbox phoneBox" type="checkbox" name="phone">Телефон</p>
+                <p><input class="checkbox emailBox" type="checkbox" name="email">Почта</p>`;
 
                 $widget.find('.top-wrapper').append(checkboxes);
                 $widget.find('.checkbox').css({
@@ -134,7 +145,7 @@ import {check} from "./modules/checker";
                     fontColor: 'black'
                 });
             } else {
-                if ($widget.find('.checkbox')){
+                if ($widget.find('.checkbox')) {
                     $widget.find('.checkbox').each(function () {
                         $widget.find('p').remove();
                     })
@@ -176,6 +187,10 @@ import {check} from "./modules/checker";
             } else if (val === 'all') {
 
                 fill.all($this);
+
+            }else if (val === 'negative') {
+
+                fill.negative($this);
 
             }
         });
@@ -231,8 +246,6 @@ import {check} from "./modules/checker";
             flexWrap: 'wrap',
             maxWidth: '243px'
         });
-
-
 
 
     });

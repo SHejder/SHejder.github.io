@@ -23,6 +23,14 @@ export function Type($input) {
         return type
     } else if (type === 'number') {
         return type
+    } else if (type === 'checkbox') {
+        if (name === 'phone'){
+            return 'phoneBox'
+        } else if (name === 'email'){
+            return 'emailBox'
+        } else {
+            return ''
+        }
     } else {
         return ''
     }
