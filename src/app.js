@@ -244,7 +244,9 @@ import {check} from "./modules/checker";
             verticalAlign: 'baseline',
             justifyContent: 'space-around',
             flexWrap: 'wrap',
-            maxWidth: '243px'
+            maxWidth: '250px',
+            boxSizing: 'unset',
+
         });
 
 
